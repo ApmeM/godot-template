@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Godot;
 using Newtonsoft.Json;
+using GodotAnalysers;
+
 
 namespace GodotTemplate.Achievements
 {
+    [Injectable(false)]
     public class LocalAchievementRepository : IAchievementRepository
     {
         private class AchievementDefinition
