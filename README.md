@@ -16,14 +16,18 @@ Replace all occurances of "godotTemplate" to your name
 
 2. Create keystores for android deployment
 
-Go to "keystore" folder and execute following commands:
+Go to "keystore" folder, remove release.keystore and execute following command:
 
 ```
-keytool -genkey -v -keystore debug.keystore -alias debg_user -storepass debug_password -keyalg RSA -keysize 2048 -validity 10000
 keytool -genkey -v -keystore release.keystore -alias release_user -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 And then add release keystore password to github secrets with the name RELEASE_KEYSTORE_PASSWORD
+You can regenerate debug.keystore as well with the following command (see the password is already set):
+
+```
+keytool -genkey -v -keystore debug.keystore -alias debug_user -storepass debug_password -keyalg RSA -keysize 2048 -validity 10000
+```
 
 3. Create new project in google play 
 
