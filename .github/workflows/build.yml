@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - '**.md'
     branches:
-      - 'master'
+      - 'main'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -50,7 +50,7 @@ jobs:
 
       - name: Restore packages
         run: |
-          dotnet restore "./src/Asteroids.sln"
+          dotnet restore "./src/GodotTemplate.sln"
 
       - name: Update presets config
         env:
@@ -133,7 +133,7 @@ jobs:
           SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-          packageName: org.apmem.games.Asteroids
-          releaseFiles: ./android/Asteroids.apk
+          packageName: org.apmem.games.godotTemplate
+          releaseFiles: ./android/GodotTemplate.apk
           track: production
           status: completed
