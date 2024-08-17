@@ -26,11 +26,11 @@ As an example this repository already has 2 prepared keystore files
 Debug keystore can be used on local machine to upload apk on android devices.
 Release keystore is used to deploy apk to google play.
 
-To make it work add your relese password to `RELEASE_KEYSTORE_PASSWORD` [repository secret](settings/secrets/actions)
+To make it work add your relese password to `RELEASE_KEYSTORE_PASSWORD` [repository secret](../../settings/secrets/actions)
 
 4. Web test
 
-Do not forget to enable [Pages](settings/pages) and set Source as 'Github Actions'
+Do not forget to enable [Pages](../../settings/pages) and set Source as 'Github Actions'
 
 The page will be available under https://apmem.github.io/godot-template/Godot.html
 
