@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Collections;
-using GodotAnalysers;
 
 [SceneReference("Minimap.tscn")]
 [Tool]

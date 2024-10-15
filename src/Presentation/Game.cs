@@ -1,5 +1,4 @@
 using Godot;
-using GodotAnalysers;
 
 [SceneReference("Game.tscn")]
 public partial class Game

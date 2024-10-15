@@ -1,4 +1,3 @@
-using GodotAnalysers;
 using Godot;
 
 [SceneReference("AchievementNotification.tscn")]

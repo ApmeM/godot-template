@@ -1,5 +1,4 @@
 using Godot;
-using GodotAnalysers;
 
 [SceneReference("FloatingText.tscn")]
 public partial class FloatingText

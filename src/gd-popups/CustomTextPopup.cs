@@ -1,7 +1,5 @@
 using Godot;
 
-using GodotAnalysers;
-
 [SceneReference("CustomTextPopup.tscn")]
 [Tool]
 public partial class CustomTextPopup

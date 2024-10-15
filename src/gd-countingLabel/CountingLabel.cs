@@ -1,5 +1,4 @@
 using Godot;
-using GodotAnalysers;
 
 [SceneReference("CountingLabel.tscn")]
 [Tool]

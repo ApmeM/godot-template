@@ -4,11 +4,11 @@
     <RootNamespace>GodotTemplate</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="GodotAnalysers" Version="1.6.4">
+    <PackageReference Include="GodotAnalysers" Version="2.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="GodotAnalysersAttribute" Version="1.6.4" />
+    <PackageReference Include="GodotAnalysersAttribute" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>

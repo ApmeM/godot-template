@@ -1,5 +1,4 @@
 using Godot;
-using GodotAnalysers;
 using GodotTemplate.Achievements;
 
 [SceneReference("AchievementNotifications.tscn")]
