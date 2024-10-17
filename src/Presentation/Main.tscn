@@ -8,19 +8,17 @@
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
-[node name="LevelSelector" parent="." instance=ExtResource( 3 )]
-
 [node name="Game" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="AchievementsListContainer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="AchievementList" parent="AchievementsListContainer" instance=ExtResource( 2 )]
-
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 
+[node name="LevelSelector" parent="MenuLayer" instance=ExtResource( 3 )]
+
+[node name="AchievementList" parent="MenuLayer" instance=ExtResource( 2 )]
+visible = false
+
 [node name="AchievementsButton" type="Button" parent="MenuLayer"]
-margin_right = 12.0
+margin_right = 104.0
 margin_bottom = 20.0
 text = "Achievements"
