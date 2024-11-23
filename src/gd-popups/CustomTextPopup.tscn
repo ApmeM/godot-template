@@ -1,18 +1,47 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://gd-popups/CustomPopup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gd-popups/CustomTextPopup.cs" type="Script" id=3]
 
 [node name="CustomTextPopup" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-Text = "Popup content text"
+ContentText = "Content text"
 
-[node name="PopupLabel" type="Label" parent="MarginContainer/PopupContainer/PopupContentMargin" index="0"]
-margin_left = 30.0
-margin_top = 60.0
-margin_right = 410.0
-margin_bottom = 536.0
+[node name="CustomPopupContainer" parent="." index="0"]
+margin_bottom = 147.0
+
+[node name="PopupContainer" parent="CustomPopupContainer" index="1"]
+margin_bottom = 109.0
+
+[node name="MarginContainer" parent="CustomPopupContainer/PopupContainer" index="0"]
+margin_bottom = 88.0
+
+[node name="InventoryFrame" parent="CustomPopupContainer/PopupContainer/MarginContainer" index="0"]
+margin_bottom = 88.0
+
+[node name="OuterInventoryMargin" parent="CustomPopupContainer/PopupContainer/MarginContainer" index="1"]
+margin_bottom = 88.0
+
+[node name="InventoryBackground" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="0"]
+margin_bottom = 79.0
+
+[node name="ContentMargin" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="1"]
+margin_bottom = 79.0
+
+[node name="ContentContainer" type="VBoxContainer" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin" index="0"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 281.0
+margin_bottom = 61.0
+
+[node name="ContentText" type="Label" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin/ContentContainer" index="0"]
+margin_right = 272.0
+margin_bottom = 14.0
 size_flags_vertical = 5
-text = "Popup content text"
+text = "Content text"
+align = 1
 valign = 1
 autowrap = true
+
+[node name="CloseButton" parent="CustomPopupContainer/PopupContainer" index="1"]
+margin_bottom = 88.0

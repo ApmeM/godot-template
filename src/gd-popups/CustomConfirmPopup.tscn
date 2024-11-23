@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gd-popups/CustomTextPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gd-popups/CustomConfirmPopup.cs" type="Script" id=2]
+
+[node name="CustomConfirmPopup" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+Title = null
+ContentText = null
+
+[node name="HeaderMargin" parent="CustomPopupContainer/HeaderCenter" index="0"]
+margin_left = 144.0
+margin_right = 164.0
+
+[node name="TitleBackground" parent="CustomPopupContainer/HeaderCenter/HeaderMargin" index="0"]
+margin_right = 20.0
+
+[node name="TitleMargin" parent="CustomPopupContainer/HeaderCenter/HeaderMargin" index="1"]
+margin_right = 20.0
+
+[node name="TitleLabel" parent="CustomPopupContainer/HeaderCenter/HeaderMargin/TitleMargin" index="0"]
+margin_right = 10.0
+text = ""
+
+[node name="PopupContainer" parent="CustomPopupContainer" index="1"]
+margin_bottom = 118.0
+
+[node name="MarginContainer" parent="CustomPopupContainer/PopupContainer" index="0"]
+margin_bottom = 97.0
+
+[node name="InventoryFrame" parent="CustomPopupContainer/PopupContainer/MarginContainer" index="0"]
+margin_bottom = 97.0
+
+[node name="OuterInventoryMargin" parent="CustomPopupContainer/PopupContainer/MarginContainer" index="1"]
+margin_bottom = 97.0
+
+[node name="InventoryBackground" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="0"]
+margin_bottom = 88.0
+
+[node name="ContentMargin" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="1"]
+margin_bottom = 88.0
+
+[node name="ContentContainer" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin" index="0"]
+margin_bottom = 70.0
+custom_constants/separation = 27
+
+[node name="ContentText" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin/ContentContainer" index="0"]
+text = ""
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin/ContentContainer" index="1"]
+margin_top = 41.0
+margin_right = 272.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/separation = 50
+
+[node name="ButtonYes" type="Button" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin/ContentContainer/HBoxContainer" index="0"]
+margin_right = 111.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="ButtonNo" type="Button" parent="CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin/ContentContainer/HBoxContainer" index="1"]
+margin_left = 161.0
+margin_right = 272.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "No"
+
+[node name="CloseButton" parent="CustomPopupContainer/PopupContainer" index="1"]
+margin_bottom = 97.0

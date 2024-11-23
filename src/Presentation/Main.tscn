@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Presentation/Main.cs" type="Script" id=1]
 [ext_resource path="res://gd-achievements/AchievementList.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gd-levelSelector/LevelSelector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gd-popups/CustomPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Presentation/Game.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node"]
@@ -13,12 +13,73 @@ visible = false
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 
-[node name="LevelSelector" parent="MenuLayer" instance=ExtResource( 3 )]
-
-[node name="AchievementList" parent="MenuLayer" instance=ExtResource( 2 )]
-visible = false
-
 [node name="AchievementsButton" type="Button" parent="MenuLayer"]
-margin_right = 104.0
-margin_bottom = 20.0
+margin_left = 130.0
+margin_top = 173.0
+margin_right = 234.0
+margin_bottom = 193.0
 text = "Achievements"
+
+[node name="StartGame" type="Button" parent="MenuLayer"]
+margin_left = 162.0
+margin_top = 339.0
+margin_right = 266.0
+margin_bottom = 359.0
+text = "Start game"
+
+[node name="CustomPopup" parent="MenuLayer" instance=ExtResource( 3 )]
+visible = false
+Title = "Achievements"
+
+[node name="CustomPopupContainer" parent="MenuLayer/CustomPopup" index="0"]
+margin_right = 399.0
+margin_bottom = 454.0
+
+[node name="HeaderCenter" parent="MenuLayer/CustomPopup/CustomPopupContainer" index="0"]
+margin_right = 282.0
+
+[node name="HeaderMargin" parent="MenuLayer/CustomPopup/CustomPopupContainer/HeaderCenter" index="0"]
+margin_left = 114.0
+margin_right = 167.0
+
+[node name="TitleLabel" parent="MenuLayer/CustomPopup/CustomPopupContainer/HeaderCenter/HeaderMargin/TitleMargin" index="0"]
+text = "Achievements"
+
+[node name="PopupContainer" parent="MenuLayer/CustomPopup/CustomPopupContainer" index="1"]
+margin_right = 282.0
+margin_bottom = 416.0
+
+[node name="MarginContainer" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer" index="0"]
+margin_right = 282.0
+margin_bottom = 395.0
+
+[node name="InventoryFrame" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer/MarginContainer" index="0"]
+margin_right = 282.0
+margin_bottom = 395.0
+
+[node name="OuterInventoryMargin" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer/MarginContainer" index="1"]
+margin_right = 282.0
+margin_bottom = 395.0
+
+[node name="InventoryBackground" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="0"]
+margin_right = 273.0
+margin_bottom = 386.0
+
+[node name="ContentMargin" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin" index="1"]
+margin_right = 273.0
+margin_bottom = 386.0
+
+[node name="AchievementList" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer/MarginContainer/OuterInventoryMargin/ContentMargin" index="0" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 255.0
+margin_bottom = 368.0
+
+[node name="CloseButton" parent="MenuLayer/CustomPopup/CustomPopupContainer/PopupContainer" index="1"]
+margin_left = 273.0
+margin_right = 282.0
+margin_bottom = 395.0
+
+[editable path="MenuLayer/CustomPopup"]
