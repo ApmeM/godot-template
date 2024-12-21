@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Godot;
 using Newtonsoft.Json;
 
@@ -80,7 +81,7 @@ namespace GodotTemplate.Achievements
             return true;
         }
 
-        public Achievement GetAchievement(string key)
+        public Task<Achievement> GetAchievement(string key)
         {
             var achievements = EnsureAchievementsLoaded();
             if (!achievements.ContainsKey(key))
@@ -89,13 +90,13 @@ namespace GodotTemplate.Achievements
                 return null;
             }
 
-            return achievements[key];
+            return Task.FromResult(achievements[key]);
         }
 
-        public IEnumerable<Achievement> GetForList()
+        public Task<IEnumerable<Achievement>> GetForList()
         {
             var achievements = EnsureAchievementsLoaded();
-            return achievements.Values.Where(a => !a.Hidden || a.Achieved).OrderByDescending(a => a.Achieved);
+            return Task.FromResult<IEnumerable<Achievement>>(achievements.Values.Where(a => !a.Hidden || a.Achieved).OrderByDescending(a => a.Achieved));
         }
 
         public void ResetAchievements()
@@ -138,7 +139,7 @@ namespace GodotTemplate.Achievements
 
             if (!userFileJson.FileExists(ACHIEVEMENTS_DATA))
             {
-                GD.PrintErr("Achievement System: Can't open achievements data. It doesn't exists on device");
+                GD.Print("Achievement System: Can't open achievements data. It doesn't exists on device. Recreating.");
             }
 
             var data = achievements.ToDictionary(a => a.Key, a => ToData(a.Value));
@@ -177,7 +178,7 @@ namespace GodotTemplate.Achievements
             var file = new File();
             if (!file.FileExists(ACHIEVEMENTS_DATA))
             {
-                GD.PrintErr("Achievement System: Can't open achievements data. It doesn't exists on device");
+                GD.Print("Achievement System: Can't open achievements data. It doesn't exists on device. Recreating.");
                 return new Dictionary<string, UserAchievement>();
             }
 

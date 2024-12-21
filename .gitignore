@@ -3,7 +3,9 @@ obj/
 .import/
 .vs/
 .mono/
-build/
 *.import
 .vscode/
 *.user
+src/android/build/assets/
+src/android/build/build/
+src/android/build/.gradle/

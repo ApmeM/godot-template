@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gd-achievements/AchievementList.cs" type="Script" id=1]
 [ext_resource path="res://gd-achievements/AchievementNotification.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gd-achievements/resources/achievement_loading.png" type="Texture" id=3]
 
 [node name="AchievementList" type="MarginContainer"]
 anchor_right = 1.0
@@ -34,3 +35,15 @@ anchor_bottom = 0.0
 margin_top = 98.0
 margin_right = 480.0
 margin_bottom = 176.0
+
+[node name="LoadingContainer" type="CenterContainer" parent="."]
+margin_right = 480.0
+margin_bottom = 800.0
+
+[node name="LoadingTexture" type="TextureRect" parent="LoadingContainer"]
+margin_left = 176.0
+margin_top = 336.0
+margin_right = 304.0
+margin_bottom = 464.0
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 3 )

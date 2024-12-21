@@ -64,10 +64,10 @@ jobs:
 
       - name: Export game
         id: export
-        uses: firebelley/godot-export@v5.2.0
+        uses: firebelley/godot-export@v6.0.0
         with:
-          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.6/mono/Godot_v3.6-stable_mono_linux_headless_64.zip
-          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.6/mono/Godot_v3.6-stable_mono_export_templates.tpz
+          godot_executable_download_url: https://github.com/godotengine/godot/releases/download/3.6-stable/Godot_v3.6-stable_mono_linux_headless_64.zip
+          godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/3.6-stable/Godot_v3.6-stable_mono_export_templates.tpz
           relative_project_path: ./src/
           export_debug: false
           use_preset_export_path: true
@@ -81,25 +81,25 @@ jobs:
           path: ${{ steps.export.outputs.build_directory }}/HTML5
 
       - name: Upload html artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: html5
           path: ${{ steps.export.outputs.build_directory }}/HTML5
 
       - name: Upload android artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: android
           path: ${{ steps.export.outputs.build_directory }}/Android
 
       - name: Upload windows artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows
           path: ${{ steps.export.outputs.build_directory }}/Windows Desktop
 
       - name: Upload linux x11 artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: linux
           path: ${{ steps.export.outputs.build_directory }}/LinuxX11
@@ -124,7 +124,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: android
           path: ./android
@@ -137,6 +137,6 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: org.apmem.games.godotTemplate
-          releaseFiles: ./android/GodotTemplate.apk
+          releaseFiles: ./android/GodotTemplate.aab
           track: production
           status: completed

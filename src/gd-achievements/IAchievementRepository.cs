@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GodotTemplate.Achievements
 {
@@ -6,7 +7,7 @@ namespace GodotTemplate.Achievements
     {
         bool ProgressAchievement(string key, int progress);
         bool UnlockAchievement(string key);
-        Achievement GetAchievement(string key);
-        IEnumerable<Achievement> GetForList();
+        Task<Achievement> GetAchievement(string key);
+        Task<IEnumerable<Achievement>> GetForList();
     }
 }

@@ -17,14 +17,24 @@ margin_right = 163.0
 margin_bottom = 779.0
 CenterNodePath = NodePath("../CenterNode")
 
-[node name="Sprite" type="Sprite" parent="." groups=["MinimapElement"]]
-position = Vector2( 57, 476 )
-texture = ExtResource( 3 )
+[node name="Exit" type="Button" parent="."]
+margin_left = 54.0
+margin_top = 43.0
+margin_right = 358.0
+margin_bottom = 173.0
+text = "Exit"
+
+[node name="Passed" type="Button" parent="."]
+margin_left = 63.0
+margin_top = 211.0
+margin_right = 367.0
+margin_bottom = 341.0
+text = "Passed"
 
 [node name="Sprite2" type="Sprite" parent="." groups=["MinimapElement"]]
-position = Vector2( 237, 206 )
+position = Vector2( 266, 608 )
 texture = ExtResource( 3 )
 
 [node name="CenterNode" type="Sprite" parent="." groups=["MinimapElement"]]
-position = Vector2( 258, 401 )
+position = Vector2( 393, 504 )
 texture = ExtResource( 3 )

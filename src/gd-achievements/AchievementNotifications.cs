@@ -45,14 +45,14 @@ public partial class AchievementNotifications
         ProcessAchievement(key, achievementRepository.UnlockAchievement(key));
     }
 
-    private void ProcessAchievement(string key, bool isOperationSuccess)
+    private async void ProcessAchievement(string key, bool isOperationSuccess)
     {
         if (!isOperationSuccess)
         {
             return;
         }
 
-        var data = achievementRepository.GetAchievement(key);
+        var data = await achievementRepository.GetAchievement(key);
         CreateAchievementPanel(data);
     }
 
