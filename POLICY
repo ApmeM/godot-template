@@ -1,1 +1,27 @@
-# Here should be a confidential policy for google play. And maybe other policies as well.
+Privacy Policy for Android Game
+
+Last updated: 2024-Dec-01
+
+ApmeM ("We" or "Our Company") has developed the mobile game GodotTemplate ("the Game"). This Privacy Policy explains what data we collect, how it is used, and how it is protected.
+
+1. Data Collection and Usage
+We respect your privacy and are committed to minimizing data collection. The Game does not collect, store, or share any personal user data.
+
+2. Third-Party Services
+The Game uses Google Play Services, provided by Google LLC, to ensure proper functioning of the following features:
+
+Google Play authentication.
+Storing achievements and leaderboards.
+Managing in-app purchases.
+For more information about Google’s data practices, please refer to the Google Privacy Policy.
+
+3. Data Security
+We do not collect personal data, so there are no data security risks related to user information in the Game. However, third-party services like Google Play Services manage their own data protection policies.
+
+4. Changes to This Privacy Policy
+We may update this Privacy Policy from time to time. Any changes will be posted within the Game or on our official website. Please review this Policy periodically for updates.
+
+5. Contact Us
+If you have any questions about this Privacy Policy, please contact us at:
+    - artem.votincev@gmail.com
+    - https://github.com/ApmeM/godot-template/issues
