@@ -104,6 +104,7 @@ public partial class DraggableCamera
         {
             if (drag)
             {
+                this.GlobalPosition = (this.GetViewport().Size / 2 - this.GetViewport().CanvasTransform.origin) / this.GetViewport().CanvasTransform.Scale;
                 var mousePos = this.GetViewport().GetMousePosition();
                 this.GlobalPosition += (initPosMouse - mousePos) * this.Zoom;
                 this.initPosMouse = mousePos;
